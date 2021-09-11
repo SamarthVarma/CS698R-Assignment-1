@@ -42,7 +42,6 @@ def q9():
     p_ucb = np.ndarray((50,3),dtype=object)
 
     for i in range(50):
-        #print(q_val)
         p_exploitation[i] = pure_exploitation(env[i],steps)
         p_exploration[i] = pure_exploration(env[i],steps)
         e_greedy[i] = epsilon_greedy(env[i],steps, epsilon)
@@ -74,7 +73,6 @@ def q9():
     optimal_final = optimal_final/50
 
     
-    #print(optimal_percentage[1])
     plt.plot(np.arange(1,1001), optimal_final[0], label = "Exploit")
     plt.plot(np.arange(1,1001), optimal_final[1], label = "Explore")
     plt.plot(np.arange(1,1001), optimal_final[2], label = "Epsilon")
@@ -103,6 +101,7 @@ def q8():
     decay_type = 'linear'
     c = 2
     temp = 100
+    
     p_exploitation = np.ndarray((50,3), dtype=object)
     p_exploration = np.ndarray((50,3), dtype=object)
     e_greedy = np.ndarray((50,3),dtype=object)
@@ -135,7 +134,6 @@ def q8():
         qmax[3] = np.argmax(e_decay[i][0][-1])
         qmax[4] = np.argmax(p_softmax[i][0][-1])
         qmax[5] = np.argmax(p_ucb[i][0][-1])
-        #print(qmax)
         for j in range(6):
             e = 0
             for k in range(1000):
@@ -147,8 +145,6 @@ def q8():
     
     optimal_final = optimal_final/50
 
-    
-    #print(optimal_percentage[1])
     plt.plot(np.arange(1,1001), optimal_final[0], label = "Exploit")
     plt.plot(np.arange(1,1001), optimal_final[1], label = "Explore")
     plt.plot(np.arange(1,1001), optimal_final[2], label = "Epsilon")
@@ -159,79 +155,6 @@ def q8():
     plt.ylabel("%Optimal")
     plt.legend()
     plt.show()
-
-""" def q8():
-    np.random.seed(373)
-    alpha = np.random.uniform(size=50)
-    beta = np.random.uniform(size=50) 
-    print(alpha,beta)  
-    epsilon = 0.5
-    steps = 1000
-    decay_type = 'linear'
-    c = 2
-    temp = 100
-    p_exploitation = np.ndarray(50, dtype=object)
-    p_exploration = np.ndarray(50, dtype=object)
-    e_greedy = np.ndarray(50,dtype=object)
-    e_decay = np.ndarray(50,dtype=object)
-    p_softmax = np.ndarray(50,dtype=object)
-    p_ucb = np.ndarray(50,dtype=object)
-
-    for i in range(50):
-        env = gym.make('2ArmBandit-v0', alpha = alpha[i], beta = beta[i])
-        env.seed(373)
-        np.random.seed(373)
-        env.action_space.seed(373)
-        env.reset()
-        p_exploitation[i] = pure_exploitation(env,steps)
-        p_exploration[i] = pure_exploration(env,steps)
-        e_greedy[i] = epsilon_greedy(env,steps, epsilon)
-        e_decay[i] = epsilon_decay(env,steps, decay_type)
-        p_softmax[i] = softmax(env,steps, temp)
-        p_ucb[i] = UCB(env,steps,c) 
-
-    means = np.zeros((6,1000,2))
-    means[0] = np.mean(p_exploitation)
-    means[1] = np.mean(p_exploration)
-    means[2] = np.mean(e_greedy)
-    means[3] = np.mean(e_decay)
-    means[4] = np.mean(p_softmax)
-    means[5] = np.mean(p_ucb)
-
-    #print(means[1])
-
-    q = np.zeros((6,1000))
-    q[0] = np.argmax(means[0],1)
-    q[1] = np.argmax(means[1],1)
-    q[2] = np.argmax(means[2],1)
-    q[3] = np.argmax(means[3],1)
-    q[4] = np.argmax(means[4],1)
-    q[5] = np.argmax(means[5],1)
-
-    print(q[1])
-    v = np.zeros(6)
-    for i in range(6):
-        v[i] = np.argmax(means[i][-1])
-
-    print(v[1])
-    optimal_percentage = np.zeros((6,1000))
-    for i in range(steps):
-        for j in range(6):
-            optimal_percentage[j][i] = optimal_percentage[j][i-1]
-            if(q[j][i] == v[j]):
-                optimal_percentage[j][i] += 1
-    
-    print(optimal_percentage[1])
-    #plot between optimal_percentage[0]to [6] and 1,1001
-    plt.plot(np.arange(1,1001), optimal_percentage[0], label = "1")
-    plt.plot(np.arange(1,1001), optimal_percentage[1], label = "2")
-    plt.plot(np.arange(1,1001), optimal_percentage[2], label = "3")
-    plt.plot(np.arange(1,1001), optimal_percentage[3], label = "4")
-    plt.plot(np.arange(1,1001), optimal_percentage[4], label = "5")
-    plt.plot(np.arange(1,1001), optimal_percentage[5], label = "6")
-    plt.legend()
-    plt.show()
- """
 
 def q7():
     np.random.seed(373)
@@ -509,9 +432,9 @@ def epsilon_decay(env, ep_count, decay_type, final_rate = 0.01):
         q_est[e] = q
         action[e] = a
         if decay_type == 'linear':
-            epsilon = epsilon - (1/ep_count)
+            epsilon = epsilon - ((1-final_rate)/ep_count)
         elif decay_type == 'exponential':
-            epsilon = math.exp(-math.log(1/0.01)*(e+1)/ep_count)
+            epsilon = math.exp(-math.log(1/final_rate)*(e+1)/ep_count)
         r_d[e] = r
         e = e + 1
     return q_est, action, r_d
@@ -621,8 +544,6 @@ if __name__ == '__main__':
         hyperparameters = {
             #'alpha': [0,1,0,1,0.5],
             #'beta': [0,0,1,1,0.5]
-            'alpha':[0.3],
-            'beta':[0.6],
             'epsilon':0.4
         }
         episode_count = 10000
