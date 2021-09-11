@@ -63,14 +63,16 @@ solved under function 'doublearmbernoullibandit(hyperparameters, ep_count)'. An 
             'beta': [0,0,1,1,0.5]
             'epsilon':0.4
         }
-        episode_count = 10000 
+
+        ,episode_count = 10000 
 
 <h3> SubQuestion 2 </h3>
 solved under function 'TenArmGaussian(hyperparameters, ep_count)'. An example of Parameters would be 
         hyperparameters = {
             'sd': [0,0.2,0.4,0.5,0.75,1,50,100]
         }
-        episode_count = 1000
+
+        ,episode_count = 1000
 
 <h3> SubQuestion 3 </h3>
 <h4> Part I : Pure Exploitation </h4>
@@ -122,6 +124,7 @@ The various parameters for the algorithms are:
     temp = 100
 
 q and action are n-dimensional arrays corresponding to the q_est and action taken of each 50 environments. 
+
 The array 'v' is the optimal action corresponding to the final q value. Tot_regret is final regret averaged out over regrets of the 50 environments.
 
 <h3> SubQuestion 7 </h3>
@@ -143,6 +146,7 @@ The various parameters for the algorithms are:
     temp = 100
 
 p_exploitation, p_exploration,e_greedy,e_decay,p_softmax, p_ucb are n-dimensional arrays corresponding to the array of tuples of q_est, action taken and rewards of each 50 environments. 
+
 p_exploitation[i][1] is the array of action taken for i-th environment for pure exploitation while qmax is the argmax of final q value (optimal action) corresponding to each algorithms (There are 6 Algorithms)
 
 <h3> SubQuestion 9 </h3>
@@ -194,6 +198,7 @@ The logic and the variables are the same as q8() except that the environment is 
 
 * As defined in function 'q5()'. It takes no parameters as arguments.
 * The various parameters to the Monte Carlo Prediction function are:
+
     policy = always left (policy[s] = 0 for all s)
     gamma = 1
     alpha = 0.5
@@ -207,6 +212,7 @@ The logic and the variables are the same as q8() except that the environment is 
 
 * As defined in function 'q6()'. It takes no parameters as arguments.
 * The various parameters to the Monte Carlo Prediction function are:
+
     policy = always left (policy[s] = 0 for all s)
     gamma = 1
     alpha = 0.5
@@ -220,6 +226,7 @@ The logic and the variables are the same as q8() except that the environment is 
 
 * As defined in function 'q7()'. It takes no parameters as arguments.
 * The various parameters to the TD Learning function are:
+
     policy = always left (policy[s] = 0 for all s)
     gamma = 1
     alpha = 0.5
@@ -237,6 +244,7 @@ The logic and the variables are the same as q8() except that the environment is 
 
 * As defined in function 'q12()'. It takes no parameters as arguments.
 * The various parameters to the Monte Carlo Prediction function are:
+
     policy = always left (policy[s] = 0 for all s)
     gamma = 1
     alpha = 0.5
@@ -250,6 +258,7 @@ The logic and the variables are the same as q8() except that the environment is 
 
 * As defined in function 'q12()'. It takes no parameters as arguments.
 * The various parameters to the Monte Carlo Prediction function are:
+
     policy = always left (policy[s] = 0 for all s)
     gamma = 1
     alpha = 0.5
@@ -263,6 +272,7 @@ The logic and the variables are the same as q8() except that the environment is 
 
 * As defined in function 'q12()'. It takes no parameters as arguments.
 * The various parameters to the Monte Carlo Prediction function are:
+
     policy = always left (policy[s] = 0 for all s)
     gamma = 1
     alpha = 0.5
