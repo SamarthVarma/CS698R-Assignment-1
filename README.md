@@ -197,7 +197,8 @@ The logic and the variables are the same as q8() except that the environment is 
 <h3> SubQuestion 5 </h3>
 
 * As defined in function 'q5()'. It takes no parameters as arguments.
-* The various parameters to the Monte Carlo Prediction function are:
+
+The various parameters to the Monte Carlo Prediction function are:
 
     policy = always left (policy[s] = 0 for all s)
     gamma = 1
