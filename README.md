@@ -2,12 +2,12 @@
 Code of Assignment 1 of Deep Reinforcement Learning as attached. Basics of Multi Armed Bandits, Monte Carlo Estimation and TD Learning.
 
 
-* Custom Environments
-* Question 1
-* Question 2
-[Custom Environments](#Custom Environments)
+* [Custom Environments](#custom1)
+* [Question 1](#question1)
+* [Question 2](#question2)
 
-<h2>Custom Environments</h2>
+
+<h2 name = "custom1">Custom Environments</h2>
 
 * There are three openai gym environments in the gym-envs folder, for 2 Armed Bernoulli Bandit, 10 Armed Gaussian Bandit and Random Walk Environment with 5 States and 2 Terminal States.
 
@@ -31,7 +31,7 @@ Code of Assignment 1 of Deep Reinforcement Learning as attached. Basics of Multi
 
 * The class GaussianEnv wraps the gym.env API
 
-<h2> Question 1 (train.py) </h2>
+<h2 name = "question1"> Question 1 (train.py) </h2>
 
 *All Questions are solved in the function declared as question number. Example, Question 5 is solved in the function declared as q5(), Question 9 as q9(). This is True for Questions 4-9. They take no parameter as input
 
@@ -153,7 +153,7 @@ The logic and the variables are the same as q8() except that the environment is 
 
 
 
-<h2> Question 2 (trainQ2.py) </h2>
+<h2 name = "question2"> Question 2 (trainQ2.py) </h2>
 
 *All Questions are solved in the function declared as question number. Example, Question 5 is solved in the function declared as q5(), Question 9 as q9(). This is True for Questions 5-10, 12-14. They take no parameter as input
 
