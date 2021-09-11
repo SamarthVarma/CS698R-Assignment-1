@@ -537,34 +537,4 @@ def TenArmGaussian(hyperparameters, ep_count):
 
 if __name__ == '__main__':
 
-
-    env = '1d0ArmGaussian-v0'
-
-    if env == '2ArmBandit-v0':
-        hyperparameters = {
-            #'alpha': [0,1,0,1,0.5],
-            #'beta': [0,0,1,1,0.5]
-            'epsilon':0.4
-        }
-        episode_count = 10000
-        env = gym.make('2ArmBandit-v0', alpha = hyperparameters['alpha'], beta = hyperparameters['beta'])
-        env.seed(373)
-        np.random.seed(373)
-        env.action_space.seed(373)
-        env.reset()
-        print(UCB(hyperparameters, episode_count,0.2))
-    
-    if env == '10ArmGaussian-v0':
-        hyperparameters = {
-            'sd': [0,0.2,0.4,0.5,0.75,1,50,100]
-        }
-        episode_count = 1000
-        env = gym.make('10ArmGaussian-v0')
-        env.seed(373)
-        np.random.seed(373)
-        env.action_space.seed(373)
-        env.reset()
-        print(UCB(env,1000,0.2)[1])
-
-
     q7()
