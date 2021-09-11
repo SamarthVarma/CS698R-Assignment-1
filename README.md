@@ -212,7 +212,8 @@ The various parameters to the Monte Carlo Prediction function are:
 <h3> SubQuestion 6 </h3>
 
 * As defined in function 'q6()'. It takes no parameters as arguments.
-* The various parameters to the Monte Carlo Prediction function are:
+
+The various parameters to the Monte Carlo Prediction function are:
 
     policy = always left (policy[s] = 0 for all s)
     gamma = 1
@@ -226,7 +227,8 @@ The various parameters to the Monte Carlo Prediction function are:
 <h3> SubQuestion 7 </h3>
 
 * As defined in function 'q7()'. It takes no parameters as arguments.
-* The various parameters to the TD Learning function are:
+
+The various parameters to the TD Learning function are:
 
     policy = always left (policy[s] = 0 for all s)
     gamma = 1
@@ -244,7 +246,8 @@ The various parameters to the Monte Carlo Prediction function are:
 <h3> SubQuestion 12 </h3>
 
 * As defined in function 'q12()'. It takes no parameters as arguments.
-* The various parameters to the Monte Carlo Prediction function are:
+
+The various parameters to the Monte Carlo Prediction function are:
 
     policy = always left (policy[s] = 0 for all s)
     gamma = 1
@@ -258,7 +261,8 @@ The various parameters to the Monte Carlo Prediction function are:
 <h3> SubQuestion 13 </h3>
 
 * As defined in function 'q12()'. It takes no parameters as arguments.
-* The various parameters to the Monte Carlo Prediction function are:
+
+The various parameters to the Monte Carlo Prediction function are:
 
     policy = always left (policy[s] = 0 for all s)
     gamma = 1
@@ -272,7 +276,8 @@ The various parameters to the Monte Carlo Prediction function are:
 <h3> SubQuestion 14 </h3>
 
 * As defined in function 'q12()'. It takes no parameters as arguments.
-* The various parameters to the Monte Carlo Prediction function are:
+
+The various parameters to the Monte Carlo Prediction function are:
 
     policy = always left (policy[s] = 0 for all s)
     gamma = 1
