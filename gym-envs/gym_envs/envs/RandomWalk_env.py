@@ -4,10 +4,11 @@ from gym.utils import seeding
 import numpy as np
 
 class RandomWalkEnv(gym.Env):
-    def __init__(self):
-        self.observation_space = spaces.Discrete(5)
+    def __init__(self, no_of_states = 7):
+        self.no_of_states = no_of_states
+        self.observation_space = spaces.Discrete(no_of_states - 2)
         self.action_space = spaces.Discrete(2)
-        self.state = 3
+        self.state = no_of_states/2
         self.seed()
 
     def seed(self ,seed=None):
@@ -24,7 +25,7 @@ class RandomWalkEnv(gym.Env):
              self.state = self.state + 1 - 2 * action
         done = False
         if(self.state == 0): done = True
-        if(self.state == 6): 
+        if(self.state == self.no_of_states - 1): 
             done = True
             reward = 1 
 

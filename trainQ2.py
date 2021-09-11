@@ -30,7 +30,6 @@ def decayLearningRate(initialValue, finalValue, maxSteps, decayType):
     
 def plot_decayLearningRate():
     linear = decayLearningRate(100, 0.1, 100, 'linear')
-    print(linear)
     exponential = decayLearningRate(100, 0.1, 100, 'exponential')
     
     plt.plot(np.arange(1,101),linear, label = "linear")
@@ -248,7 +247,6 @@ def q12():
     state, _ = env.reset()    
     policy = np.zeros(7)
     v, v_r, G_t = montecarloprediction(env,policy,1,0.5,100,500,1) 
-    print(G_t[:,3])
     plt.plot(np.arange(1,501),np.full(500,v[3]), label = "v(3)", color="green" )
     plt.scatter(np.arange(1,501),G_t[:,3], s=1)
     plt.xlabel("Episodes")
@@ -265,7 +263,6 @@ def q13():
     state, _ = env.reset()    
     policy = np.zeros(7)
     v, v_r, G_t = montecarloprediction(env,policy,1,0.5,100,500,0) 
-    print(G_t[:,3])
     plt.plot(np.arange(1,501),np.full(500,v[3]), label = "v(3)", color="green" )
     plt.scatter(np.arange(1,501),G_t[:,3], s=1)
     plt.xlabel("Episodes")
@@ -282,7 +279,6 @@ def q14():
     state, _ = env.reset()    
     policy = np.zeros(7)
     v, v_r, G_t = TemporalDifferencePrediction(env,policy,1,0.5,500) 
-    print(G_t[:,3])
     plt.plot(np.arange(1,501),np.full(500,v[3]), label = "v(3)", color="green" )
     plt.scatter(np.arange(1,501),G_t[:,3], s=1)
     plt.xlabel("Episodes")
@@ -294,4 +290,4 @@ def q14():
 
 
 if __name__ == '__main__':
-    q10()
+    q14()
